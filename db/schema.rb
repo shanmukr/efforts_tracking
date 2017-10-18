@@ -10,18 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171018092037) do
+ActiveRecord::Schema.define(version: 20171018155825) do
 
   create_table "employees", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name", limit: 99
     t.integer "manager_id"
     t.integer "eid"
     t.string "type"
     t.string "login"
     t.date "j_date"
     t.date "l_date"
+    t.string "password"
+    t.integer "phone_nu"
+    t.string "name"
+    t.string "last_name"
+    t.string "status"
   end
 
   create_table "goals", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -35,6 +39,7 @@ ActiveRecord::Schema.define(version: 20171018092037) do
     t.string "comments"
     t.boolean "t_progress"
     t.integer "emp_id"
+    t.integer "given_by"
   end
 
 end
