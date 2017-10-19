@@ -1,12 +1,11 @@
-<div class="well well-sm">
-  <div class="well well-sm font_colour_green"><center>Welecome to Efforts Tracking</center></div>
-  <div class="well center_all">
-    <%= form_tag :action => "emp_validation" do %>
-      <span class="lead">User Name</span><br/>
-      <%= text_field_tag :emp_name, params[:emp_name], placeholder: "Enter the user name", :class => "form-control" %><br/>
-      <span class="lead">Eneter the password</span><br/>
-      <%= password_field :password, params[:password], placeholder: "Enetr the password", :class => "form-control" %><br/>
-      <center><%= submit_tag "login" %></center>
-  	<% end %>
-  </div>
+<div class="well well-sm"></div>
+<div class="well well-sm font_colour_green"><center>Welecome to Efforts Tracking</center></div>
+<div class="well center_all">
+  <%= form_tag :action => "emp_validation" do %>
+    <span class="lead">User Name</span><br/>
+    <%= text_field_tag :emp_name, params[:emp_name], placeholder: "Enter the user name", :class => "form-control" %><br/>
+    <span class="lead">Eneter the password</span><br/>
+    <%= password_field :password, params[:password], placeholder: "Enetr the password", :class => "form-control" %><br/>
+    <center><%= submit_tag "login" %></center>
+	<% end %>
 </div>

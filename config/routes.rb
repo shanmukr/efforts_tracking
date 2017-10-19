@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :home do
     collection do
       post "emp_validation"
+      get  'logout'
     end
   end
 

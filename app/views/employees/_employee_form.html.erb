@@ -4,15 +4,15 @@
   <% action = ( go_action == "new") ? "create" : "update" %>
   <%= form_for( @employee, :url => { action: action }) do |f| %>
     <div class="row">
-      <div class="lead col-sm-4">Enter the first name </div>
+      <div class="lead col-sm-4">First name </div>
       <div class="col-sm-4">
         <%= f.text_field :name, :class => "form-control" %>
       </div>
-      <div class="lead col-sm-4">Enter the last name </div>
+      <div class="lead col-sm-4">Last name </div>
       <div class="col-sm-4">
         <%= f.text_field :last_name, :class => "form-control" %>
       </div>
-      <div class="lead col-sm-4">Enetr the login name</div>
+      <div class="lead col-sm-4">Login name</div>
       <div class="col-sm-4">
         <%= f.text_field :login, :class => "form-control" %>
       </div>
@@ -47,6 +47,10 @@
       <div class="lead col-sm-4">Password</div>
       <div class="col-sm-4">
         <%= f.text_field :password, :class => "form-control" %>
+      </div>
+      <div class="lead col-sm-4">Phone</div>
+      <div class="col-sm-4">
+        <%= f.text_field :phone, :class => "form-control" %>
       </div>
     </div>
     <%= f.submit (go_action=="new") ? "Save" : "Update" %>

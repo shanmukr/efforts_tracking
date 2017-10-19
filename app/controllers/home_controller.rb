@@ -20,4 +20,8 @@ class HomeController < ApplicationController
     end
   end
 
+  def logout
+    session.delete(:log_emp) 
+    render 'index'
+  end
 end

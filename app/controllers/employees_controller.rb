@@ -22,11 +22,18 @@ class EmployeesController < ApplicationController
   end
 
   def update
+    @employee = Employee.find(params[:id])
+    @employee.update(employee_authorised_params)
+    redirect_to :action => "index" 
+  end
+
+  def show
+    @employee = Employee.find(params[:id])
   end
 
   private
   def employee_authorised_params
-    params.require(:employee).permit(:name, :eid, :manager_id, :login, :emp_type, :last_name, :email, :status, :j_date, :l_date, :password )
+    params.require(:employee).permit(:name, :eid, :manager_id, :login, :emp_type, :last_name, :email, :status, :j_date, :l_date, :password, :phone )
   end
 
 end
