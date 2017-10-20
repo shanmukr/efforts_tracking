@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :goals do
     collection do
       post 'new', 'update'
+      get  'my_goals'
     end
   end
 

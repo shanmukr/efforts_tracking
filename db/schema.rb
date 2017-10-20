@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20171020071705) do
     t.date "e_date"
     t.date "a_date"
     t.date "f_date"
-    t.string "t_status"
     t.string "comments"
     t.boolean "t_progress"
     t.integer "emp_id"
