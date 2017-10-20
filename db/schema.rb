@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171019073826) do
+ActiveRecord::Schema.define(version: 20171020071705) do
 
   create_table "employees", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "manager_id"
     t.integer "eid"
+    t.string "type"
     t.string "login"
     t.date "j_date"
     t.date "l_date"
@@ -41,6 +42,8 @@ ActiveRecord::Schema.define(version: 20171019073826) do
     t.boolean "t_progress"
     t.integer "emp_id"
     t.integer "given_by"
+    t.string "status"
+    t.string "name"
   end
 
 end

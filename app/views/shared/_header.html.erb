@@ -1,4 +1,17 @@
-<div class="col-sm-6 pull-right text-right">
-  
-  <%= link_to "logout", :controller => "home", :action => "logout" %>
+<div class="well sell-sm">
+  <div class="col-sm-2">
+    <%= link_to "All Employees", :controller => "employees", :action => "index" %>
+  </div>
+  <div class="col-sm-2">
+    <%= link_to "Add New Employee", :controller => "employees", :action => "new" %>
+  </div>
+  <div class="col-sm-2">
+    <%= link_to "All Goals", :controller => "goals", :action => "index" %>
+  </div>
+  <div class="col-sm-2">
+    <%= link_to "Add New Goal", :controller => "goals", :action => "new" %>
+  </div>
+  <div class="col-sm-2 pull-right text-right">
+    <%= link_to "logout", :controller => "home", :action => "logout" %>
+  </div>
 </div>

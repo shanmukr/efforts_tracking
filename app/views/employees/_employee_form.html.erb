@@ -1,4 +1,6 @@
-<span class="lead"><%= go_action == "new" ? "Adding new Employee." : "Editing employee details" %></span>
+<div class="well well-sm">
+  <span class="lead"><center><%= go_action == "new" ? "Adding new Employee" : "Editing employee details" %></center></span>
+</div>
 
 <div class="well">
   <% action = ( go_action == "new") ? "create" : "update" %>
@@ -8,51 +10,75 @@
       <div class="col-sm-4">
         <%= f.text_field :name, :class => "form-control" %>
       </div>
+    </div>
+    <div class="row">
       <div class="lead col-sm-4">Last name </div>
       <div class="col-sm-4">
         <%= f.text_field :last_name, :class => "form-control" %>
       </div>
+    </div>
+    <div class="row">
       <div class="lead col-sm-4">Login name</div>
       <div class="col-sm-4">
         <%= f.text_field :login, :class => "form-control" %>
       </div>
+    </div>
+    <div class="row">
       <div class="lead col-sm-4">Employee type</div>
       <div class="col-sm-4">
         <%= f.text_field :emp_type, :class => "form-control" %>
       </div>
+    </div>
+    <div class="row">
       <div class="lead col-sm-4">Employee id</div>
       <div class="col-sm-4">
         <%= f.text_field :eid, :class => "form-control" %>
       </div>
+    </div>
+    <div class="row">
       <div class="lead col-sm-4">Manager employee id</div>
       <div class="col-sm-4">
         <%= f.text_field :manager_id, :class => "form-control" %>
       </div>
+    </div>
+    <div class="row">
       <div class="lead col-sm-4">Email</div>
       <div class="col-sm-4">
         <%= f.text_field :email, :class => "form-control" %>
       </div>
+    </div>
+    <div class="row">
       <div class="lead col-sm-4">Status</div>
       <div class="col-sm-4">
         <%= f.text_field :status, :class => "form-control" %>
       </div>
+    </div>
+    <div class="row">
       <div class="lead col-sm-4">Joining date</div>
       <div class="col-sm-4">
         <%= f.text_field :j_date, :class => "form-control" %>
       </div>
+    </div>
+    <div class="row">
       <div class="lead col-sm-4">Leaving Date</div>
       <div class="col-sm-4">
         <%= f.text_field :l_date, :class => "form-control" %>
       </div>
+    </div>
+    <div class="row">
       <div class="lead col-sm-4">Password</div>
       <div class="col-sm-4">
         <%= f.text_field :password, :class => "form-control" %>
       </div>
+    </div>
+    <div class="row">
       <div class="lead col-sm-4">Phone</div>
       <div class="col-sm-4">
         <%= f.text_field :phone, :class => "form-control" %>
       </div>
     </div>
-    <%= f.submit (go_action=="new") ? "Save" : "Update" %>
+    <div class="pull-right col-sm-7">
+      <%= f.submit (go_action=="new") ? "Save" : "Update" %>
+    </div>
   <% end %>
 </div>
