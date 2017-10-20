@@ -35,7 +35,12 @@ class GoalsController < ApplicationController
   end
 
   def my_goals
-    redirect_to :action => "index"
+    if get_cur_emp.emp_type = "admin"
+      @goals = Goal.where(:emp_id => get_cur_emp.eid)
+    else
+      @goals = Goal.where(:given_by => get_cur_emp.eid)
+    end
+    render "index"
   end
 
   private
