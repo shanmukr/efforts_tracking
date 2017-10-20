@@ -30,9 +30,13 @@ class GoalsController < ApplicationController
     end
   end
 
+  def show
+    @goal = Goal.find(params[:id])
+  end
+
   private
   def goal_authorised_params
-    params.require(:goal).premit(:name, :description, :e_date, :c_date, :t_status, :f_date, :status, :emp_id, :given_by, :t_progress, :comments )
+    params.require(:goal).permit(:name, :description, :e_date, :c_date, :t_status, :f_date, :status, :emp_id, :given_by, :t_progress, :comments )
   end
 
 end

@@ -3,4 +3,58 @@
 </div>
 
 <div class="well well-sm">
+  <% action = (go_action == "new") ? "create" : "update" %>
+  <%= form_for( @goal, :url => {:action => action }) do |f| %>
+    <div class="row">
+      <div class="lead col-sm-4">Name</div>
+      <div class="col-sm-4">
+        <%= f.text_field :name, :class => "form-control"%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="lead col-sm-4">Description</div>
+      <div class="col-sm-4">
+        <%= f.text_area :description, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="lead col-sm-4">Excepted date</div>
+      <div class="col-sm-4">
+        <%= f.text_field :e_date, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="lead col-sm-4">Actual Date</div>
+      <div class="col-sm-4">
+        <%= f.text_field :a_date, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="lead col-sm-4">Given To</div>
+      <div class="col-sm-4">
+        <%= f.text_field :emp_id, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="lead col-sm-4">Comments</div>
+      <div class="col-sm-4">
+        <%= f.text_area :comments, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="lead col-sm-4">Status</div>
+      <div class="col-sm-4">
+        <%= f.text_field :status, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="lead col-sm-4">Progress</div>
+      <div class="col-sm-4">
+        <%= f.text_field :t_progress, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="pull-right col-sm-7">
+      <%= f.submit (go_action == "new") ? "Save" : "Update" %>
+    </div>
+  <% end %>
 </div>

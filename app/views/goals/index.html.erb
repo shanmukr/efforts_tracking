@@ -19,7 +19,7 @@
 		<tbody>
 		  <% @goals.each do |f| %>
 		    <tr>
-			    <th><%= f.name          %></th>
+			    <th><%= link_to f.name, :controller => "goals", :action => "show", :id => f.id %></th>
 			    <th><%= f.description   %></th>
 			    <th><%= f.given_by      %></th>
 			    <th><%= f.created_at    %></th>
