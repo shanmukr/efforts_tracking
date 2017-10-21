@@ -26,7 +26,7 @@
     <div class="row">
       <div class="lead col-sm-4">Employee type</div>
       <div class="col-sm-4">
-        <%= f.text_field :emp_type, :class => "form-control" %>
+        <%= f.select :emp_type, ['admin', 'manager', 'individual'], :prompt => "Please Select", :class => "form-control" %>
       </div>
     </div>
     <div class="row">
@@ -36,9 +36,9 @@
       </div>
     </div>
     <div class="row">
-      <div class="lead col-sm-4">Manager employee id</div>
+      <div class="lead col-sm-4">Manager</div>
       <div class="col-sm-4">
-        <%= f.text_field :manager_id, :class => "form-control" %>
+        <%= f.collection_select( "manager_id", @managers, :id, :name, { :prompt => "Please select"}, :class => "form-control") %>
       </div>
     </div>
     <div class="row">
@@ -50,13 +50,13 @@
     <div class="row">
       <div class="lead col-sm-4">Status</div>
       <div class="col-sm-4">
-        <%= f.text_field :status, :class => "form-control" %>
+        <%= f.select :status, ['active', 'non-active'], :prompt => "Please select", :class => "form-control" %>
       </div>
     </div>
     <div class="row">
       <div class="lead col-sm-4">Joining date</div>
       <div class="col-sm-4">
-        <%= f.text_field :j_date, :class => "form-control" %>
+        <%= f.text_field :j_date, :class => "form-control datepicker" %>
       </div>
     </div>
     <div class="row">
@@ -82,3 +82,13 @@
     </div>
   <% end %>
 </div>
+
+
+<script>
+  $(document).ready(function(){
+    $(".datepicker").datepicker(
+       {format: 'dd-mm-yyyy', autoclose: true, minDate: 0}
+     );
+  })
+</script>
+

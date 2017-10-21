@@ -13,7 +13,7 @@
 			  <th>Excepted Date   </th>
 			  <th>Actual Date     </th>
 			  <th>Given to        </th>
-				<th>Comments        </th>
+ 				<th>Comments        </th>
 		  </tr>
 	  </thead>
 		<tbody>
@@ -21,7 +21,8 @@
 		    <tr>
 			    <th><%= link_to f.name, :controller => "goals", :action => "show", :id => f.id %></th>
 			    <th><%= f.description   %></th>
-			    <th><%= f.given_by      %></th>
+			    <%#= f.given_by      %>
+			    <th><%= f.employees.name      %></th>
 			    <th><%= f.created_at    %></th>
 			    <th><%= f.e_date        %></th>
 			    <th><%= f.a_date        %></th>

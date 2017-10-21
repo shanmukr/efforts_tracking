@@ -10,10 +10,11 @@ class GoalsController < ApplicationController
 
   def create
     @goal = Goal.new(goal_authorised_params)
+    @goal.given_by = get_cur_emp.eid
     if @goal.save
       redirect_to :action => "index"
     else
-      rails "error".inspect
+      raise "error".inspect
     end
   end
 
@@ -26,7 +27,7 @@ class GoalsController < ApplicationController
     if @goal.update(goal_authorised_params)
       redirect_to :action => "index"
     else
-      rails "error".inspect
+      raise "error".inspect
     end
   end
 

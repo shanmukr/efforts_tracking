@@ -1,3 +1,51 @@
 <div class="well well-sm">
-  <%= link_to "Edit", :controller => "employees", :action => "edit", :id => @employee.id %>
+  <span class="lead"><%= "Showing Details of #{@employee.name}." %></span>
+  <span class="pull-right lead"><%= link_to "Edit", :controller => "employees", :action => "edit", :id => @employee.id %></span>
+</div>
+
+<div class="well well-sm">
+  <div class="row">
+    <span class="col-sm-4">First Name</span>
+    <span class="col-sm-4"><%= @employee.name %></span>
+  </div>
+  <div class="row">
+    <span class="col-sm-4">Last Name</span>
+    <span class="col-sm-4"><%= @employee.last_name %></span>
+  </div>
+  <div class="row">
+    <span class="col-sm-4">Email</span>
+    <span class="col-sm-4"><%= @employee.email %></span>
+  </div>
+  <div class="row">
+    <span class="col-sm-4">Phone</span>
+    <span class="col-sm-4"><%= @employee.phone %></span>
+  </div>
+  <div class="row">
+    <span class="col-sm-4">Employee Id</span>
+    <span class="col-sm-4"><%= @employee.eid %></span>
+  </div>
+  <div class="row">
+    <span class="col-sm-4">Login Name</span>
+    <span class="col-sm-4"><%= @employee.login  %></span>
+  </div>
+  <div class="row">
+    <span class="col-sm-4">Join Date</span>
+    <span class="col-sm-4"><%= @employee.j_date %></span>
+  </div>
+  <div class="row">
+    <span class="col-sm-4">Manager Name</span>
+    <span class="col-sm-4"><%= link_to @employee.manager.name, :action => "show", :id => @employee.manager.id %></span>
+  </div>
+  <div class="row">
+    <span class="col-sm-4"></span>
+    <span class="col-sm-4"></span>
+  </div>
+  <div class="row">
+    <span class="col-sm-4"></span>
+    <span class="col-sm-4"></span>
+  </div>
+  <div class="row">
+    <span class="col-sm-4"></span>
+    <span class="col-sm-4"></span>
+  </div>
 </div>

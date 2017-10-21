@@ -7,7 +7,6 @@ end
 
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem 'bootstrap-sass', '~> 3.2.0'
-gem 'chartkick', '~> 1.2.4'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'calendar_date_select'

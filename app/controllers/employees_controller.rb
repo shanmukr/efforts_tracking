@@ -4,10 +4,15 @@ class EmployeesController < ApplicationController
     @employees = Employee.where(:status => "active").order(:eid)
   end
 
-  def new
-    @employee = Employee.new
+  def all_managers
+    Employee.where.not(:emp_type => "individual")
   end
 
+  def new
+    @managers = all_managers
+    @employee = Employee.new
+  end
+  
   def create
     @employee = Employee.new(employee_authorised_params)
     if @employee.save
@@ -18,6 +23,7 @@ class EmployeesController < ApplicationController
   end
 
   def edit
+    @managers = all_managers
     @employee = Employee.find(params[:id])
   end
 

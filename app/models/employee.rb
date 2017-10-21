@@ -8,5 +8,8 @@ class Employee < ApplicationRecord
   #validates :password, presence: true, length: { minimum: 6 }
 
   has_and_belongs_to_many    :goals
+  belongs_to                 :manager,
+                             :class_name => "Employee",
+                             :foreign_key => "manager_id"
 
 end

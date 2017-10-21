@@ -1,9 +1,43 @@
 <div class="well well-sm">
-  <span class="lead"><center><%= "showing Details of #{@goal.name}" %></center><span>
-	<span class="pull-right"><%= link_to "Edit", :action => "edit", :id => @goal.id %></span>
+  <span class="lead"><%= "showing Details of #{@goal.name}" %><span>
+ 	<span class="pull-right"><%= link_to "Edit", :action => "edit", :id => @goal.id %></span>
 </div>
 
 <div class="well well-sm">
-  <div class="col-sm-4">
+  <div class="row">
+    <span class="col-sm-4">Name</span>
+    <span class="col-sm-4"><%= @goal.name %></span>
+  </div>
+  <div class="row">
+    <span class="col-sm-4">Description</span>
+    <span class="col-sm-4"><%= @goal.description %></span>
+  </div>
+  <div class="row">
+    <span class="col-sm-4">Comments</span>
+    <span class="col-sm-4"><%= @goal.comments %></span>
+  </div>
+  <div class="row">
+    <span class="col-sm-4">Created By</span>
+    <span class="col-sm-4"><%= @goal.owner.name %></span>
+  </div>
+  <div class="row">
+    <span class="col-sm-4">Created Date</span>
+    <span class="col-sm-4"><%= @goal.e_date %></span>
+  </div>
+  <div class="row">
+    <span class="col-sm-4">Excepted Date</span>
+    <span class="col-sm-4"><%= @goal.e_date %></span>
+  </div>
+  <div class="row">
+    <span class="col-sm-4">Status</span>
+    <span class="col-sm-4"><%= @goal.status %></span>
+  </div>
+  <div class="row">
+    <span class="col-sm-4">Assigned To</span>
+    <span class="col-sm-4"><%= @goal.employees.collect(&:name) %></span>
+  </div>
+  <div class="row">
+    <span class="col-sm-4"></span>
+    <span class="col-sm-4"></span>
   </div>
 </div>

@@ -23,7 +23,7 @@
           <th><%= f.last_name %></th>
           <th><%= f.phone %></th>
           <th><%= f.email %></th>
-          <th><%= f.manager_id %></th>
+          <th><%= link_to f.manager.name, :controller => "employees", :action => "show", :id => f.manager.id %></th>
           <th><%= f.j_date %></th>
           <th><%= f.login %></th>
         </tr>
