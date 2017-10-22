@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
       Employee.find_by( login: session[:log_emp])
     end
   end
+
+  def all_employees
+    Employee.where(:emp_type => "individual", :status => "active")
+  end
+
 end

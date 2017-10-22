@@ -5,7 +5,7 @@ class EmployeesController < ApplicationController
   end
 
   def all_managers
-    Employee.where.not(:emp_type => "individual")
+    Employee.where.not(:emp_type => "individual", :status => "active")
   end
 
   def new

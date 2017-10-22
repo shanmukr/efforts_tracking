@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 20171020105330) do
     t.string "t_status"
     t.string "comments"
     t.boolean "t_progress"
-    t.integer "emp_id"
     t.integer "given_by"
     t.string "status"
     t.string "name"

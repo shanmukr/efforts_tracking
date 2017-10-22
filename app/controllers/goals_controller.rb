@@ -16,10 +16,15 @@ class GoalsController < ApplicationController
   def create
     @goal = Goal.new(goal_authorised_params)
     @goal.given_by = get_cur_emp.eid
+    name = @goal.name
     if @goal.save
       redirect_to :action => "index"
     else
       raise "error".inspect
+    end
+    if params[:all_emp_id].present
+      s_goal = Goal.find_by_name(name)
+      s_goal.employees << params[:emp_id]
     end
   end
 
@@ -50,9 +55,18 @@ class GoalsController < ApplicationController
     render "index"
   end
 
+  def goal_actions
+    @td_id = params[:id]
+    @td_id.to_s
+    @employees = all_employees
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
   def goal_authorised_params
-    params.require(:goal).permit(:name, :description, :e_date, :c_date, :t_status, :f_date, :status, :emp_id, :given_by, :t_progress, :comments )
+    params.require(:goal).permit(:name, :description, :e_date, :c_date, :a_date, :t_status, :f_date, :status, :given_by, :t_progress, :comments )
   end
 
 end

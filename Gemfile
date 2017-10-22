@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'calendar_date_select'
 gem 'bcrypt', '3.1.11'
+gem 'bootstrap-datepicker-rails', '~> 1.6', '>= 1.6.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'

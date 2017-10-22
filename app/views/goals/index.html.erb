@@ -12,22 +12,21 @@
 			  <th>Created at      </th>
 			  <th>Excepted Date   </th>
 			  <th>Actual Date     </th>
-			  <th>Given to        </th>
  				<th>Comments        </th>
+ 				<th>Action          </th>
 		  </tr>
 	  </thead>
 		<tbody>
 		  <% @goals.each do |f| %>
 		    <tr>
-			    <th><%= link_to f.name, :controller => "goals", :action => "show", :id => f.id %></th>
-			    <th><%= f.description   %></th>
-			    <%#= f.given_by      %>
-			    <th><%= f.employees.name      %></th>
-			    <th><%= f.created_at    %></th>
-			    <th><%= f.e_date        %></th>
-			    <th><%= f.a_date        %></th>
-			    <th><%= f.emp_id        %></th>
-			    <th><%= f.comments      %></th>
+			     <td><%= link_to f.name, :controller => "goals", :action => "show", :id => f.id %></th>
+			     <td><%= f.description   %></td>
+			     <td><%= f.owner.name    %></td>
+			     <td><%= f.created_at    %></td>
+			     <td><%= f.e_date        %></td>
+			     <td><%= f.a_date        %></td>
+			     <td><%= f.comments      %></td>
+			     <td id="<%= "change_" +f.id.to_s %>"><%= link_to "Action", :controller => "goals", :action => "goal_actions", :id => f.id, remote: true   %></td>
 		    </tr>
 			<% end%>
 		</tbody>

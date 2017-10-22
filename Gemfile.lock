@@ -43,6 +43,8 @@ GEM
     arel (8.0.0)
     bcrypt (3.1.11)
     bindex (0.5.0)
+    bootstrap-datepicker-rails (1.7.1.1)
+      railties (>= 3.0)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     builder (3.2.3)
@@ -191,6 +193,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (= 3.1.11)
+  bootstrap-datepicker-rails (~> 1.6, >= 1.6.1.1)
   bootstrap-sass (~> 3.2.0)
   byebug
   calendar_date_select
