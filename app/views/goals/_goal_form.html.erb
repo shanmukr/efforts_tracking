@@ -12,12 +12,6 @@
       </div>
     </div>
     <div class="row">
-      <div class="lead col-sm-4">Description</div>
-      <div class="col-sm-4">
-        <%= f.text_area :description, :class => "form-control" %>
-      </div>
-    </div>
-    <div class="row">
       <div class="lead col-sm-4">Excepted date</div>
       <div class="col-sm-4">
         <%= f.text_field :e_date, :class => "form-control" %>
@@ -32,25 +26,31 @@
     <div class="row">
       <div class="lead col-sm-4">Given To</div>
       <div class="col-sm-4">
-        <%= f.text_field :emp_id, :class => "form-control" %>
+        <%= f.collection_select :emp_id, @all_emp, :id, :name, :prompt => "Please select", :class => "form-control" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="lead col-sm-4">Status</div>
+      <div class="col-sm-4">
+        <%= f.select :status, ['active', 'complete'], :prompt => "Please select", :class => "form-control" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="lead col-sm-4">Progress</div>
+      <div class="col-sm-4">
+        <%= f.select :t_progress, [ 'inprogress', 'hold', 'reject' ], :prompt => "Please select", :class => "form-control" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="lead col-sm-4">Description</div>
+      <div class="col-sm-4">
+        <%= f.text_area :description, :class => "form-control" %>
       </div>
     </div>
     <div class="row">
       <div class="lead col-sm-4">Comments</div>
       <div class="col-sm-4">
         <%= f.text_area :comments, :class => "form-control" %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="lead col-sm-4">Status</div>
-      <div class="col-sm-4">
-        <%= f.text_field :status, :class => "form-control" %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="lead col-sm-4">Progress</div>
-      <div class="col-sm-4">
-        <%= f.text_field :t_progress, :class => "form-control" %>
       </div>
     </div>
     <div class="pull-right col-sm-7">

@@ -1,7 +1,7 @@
 class Employee < ApplicationRecord
 
   validates_presence_of    :name, :email
-  validates_uniqueness_of  :email
+  validates_uniqueness_of  :email, :phone, :eid, :login
   #auto_strip_attributes    :name, :squish => true
   validates_format_of      :email, :with => /([\w]+)@([\w]+)\.com/
   #has_secure_password

@@ -4,7 +4,12 @@ class GoalsController < ApplicationController
     @goals = Goal.where(:status => "active")
   end
 
+  def all_emp
+    Employee.where(:emp_type => "individual", :manager_id => get_cur_emp.eid )
+  end
+
   def new
+    @all_emp = all_emp
     @goal = Goal.new
   end
 
@@ -19,6 +24,7 @@ class GoalsController < ApplicationController
   end
 
   def edit
+    @all_emp = all_emp
     @goal = Goal.find(params[:id])
   end
 
