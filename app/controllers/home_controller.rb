@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
-  
+
+  #before_action :emp_validation, :except => ['index']
+
   def index
   end
 
@@ -22,4 +24,5 @@ class HomeController < ApplicationController
     session.delete(:log_emp) 
     render 'index'
   end
+
 end
