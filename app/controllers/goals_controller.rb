@@ -20,9 +20,10 @@ class GoalsController < ApplicationController
     if @goal.save
       redirect_to :action => "index"
     else
-      raise "error".inspect
-    end
-    if params[:all_emp_id].present
+      log_errors(@goal)
+		end
+
+    if params[:all_emp_id].present?
       s_goal = Goal.find_by_name(name)
       s_goal.employees << params[:emp_id]
     end

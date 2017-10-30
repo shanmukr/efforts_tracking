@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def all_managers
-    Employee.where.not(:emp_type => "individual", :status => "active")
+    Employee.where.not(:emp_type => "individual", :status => "non-active")
   end
   
 	def log_errors(object)
