@@ -4,10 +4,6 @@ class EmployeesController < ApplicationController
     @employees = Employee.where(:status => "active").order(:eid)
   end
 
-  def all_managers
-    Employee.where.not(:emp_type => "individual", :status => "active")
-  end
-
   def new
     @managers = all_managers
     @employee = Employee.new
@@ -18,7 +14,7 @@ class EmployeesController < ApplicationController
     if @employee.save
       redirect_to :action => "index"
     else
-      raise "error".inspect
+		  log_errors(@employee)
     end
   end
 

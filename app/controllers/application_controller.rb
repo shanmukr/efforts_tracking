@@ -15,4 +15,21 @@ class ApplicationController < ActionController::Base
     Employee.where(:emp_type => "individual", :status => "active")
   end
 
+  def all_managers
+    Employee.where.not(:emp_type => "individual", :status => "active")
+  end
+  
+	def log_errors(object)
+    unless object.valid?
+      object.errors.full_messages.each { |mesg|
+        logger.info(mesg)
+        if flash[:danger].nil?
+          flash[:danger] = mesg
+        else
+          flash[:danger] = flash[:danger] + ", " + mesg
+        end
+      }
+    end
+  end
+
 end
