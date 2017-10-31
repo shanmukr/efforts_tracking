@@ -25,12 +25,11 @@ class GoalsController < ApplicationController
 
     if params[:all_emp_id].present?
       s_goal = Goal.find_by_name(name)
-      s_goal.employees << params[:emp_id]
+      s_goal.employees << params[:all_emp_id]
     end
   end
 
   def edit
-    @all_emp = all_emp
     @goal = Goal.find(params[:id])
   end
 
@@ -39,7 +38,7 @@ class GoalsController < ApplicationController
     if @goal.update(goal_authorised_params)
       redirect_to :action => "index"
     else
-      raise "error".inspect
+      log_errors(@goal)
     end
   end
 
@@ -48,10 +47,10 @@ class GoalsController < ApplicationController
   end
 
   def my_goals
-    if get_cur_emp.emp_type = "admin"
-      @goals = Goal.where(:emp_id => get_cur_emp.eid)
-    else
+    if get_cur_emp.emp_type = "admin" || get_cur_emp.emp_type = "manager"
       @goals = Goal.where(:given_by => get_cur_emp.eid)
+    else
+      flash[:danger] = "error"
     end
     render "index"
   end
